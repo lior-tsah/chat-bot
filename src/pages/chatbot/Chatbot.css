@@ -1,0 +1,771 @@
+.home-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20.484px;
+    /* background-image: url('../../assets/layer-blur.svg');
+    background-size: cover; */
+    /* align-self: stretch; */
+}
+
+.scroll {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: scroll;
+    gap: 24px;
+    padding: 10px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.chat-camera-arrow-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.category-title-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.grid-container {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    color: var(--Color-Text-Color-1);
+    font-family: Inter;
+    font-size: 20.484px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30.727px;
+    gap: 10px;
+}
+
+.column {
+    position: relative;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+
+.grid-item-new {
+    display: flex;
+    padding: 8px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    height: 100%;
+    border-radius: var(--Numeric-Values-Corner-Radius--Med, 8px);
+    background: var(--Base-colours-Light, #FFF);
+
+    box-shadow: none !important;
+}
+
+.grid-item-title {
+    color: var(--Base-colours-Dark, #0F0600);
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    padding: 8px 12px 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+
+}
+
+
+.swap-animation {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
+.grid-item-footer {
+    display: inline-flex;
+    width: 95%;
+    padding: 12px 13px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    background: var(--Linear-overlay, linear-gradient(159deg, rgba(3, 3, 7, 0.00) -21.39%, #030307 211.86%));
+    backdrop-filter: blur(2px);
+    position: relative;
+    /* top: -13px; */
+}
+
+.grid-item-footer-new {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    /* top: -13px; */
+}
+
+.grid-item-status-container {
+    display: flex;
+    flex: 4;
+    padding: 12px;
+    gap: 6px;
+    align-items: center;
+    border-radius: var(--Numeric-Values-Corner-Radius--Small, 4px);
+}
+
+.grid-item-icons-container {
+    display: flex;
+    flex: 5;
+    padding: 12px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.status-green-bg {
+    background: var(--Camera-Status-Online-bg, #E6FBDF);
+}
+
+.status-orange-bg {
+    background: var(--Camera-Status-Standby, #FEF4EB);
+}
+
+.status-red-bg {
+    background: var(--Base-colours-Light, #FBECEB);
+}
+
+
+.camera-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.orange {
+    background: #F68218;
+}
+
+.orange-border {
+    border: 2.5px solid #F68218
+}
+
+.status-name {
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.green-status-name {
+    color: #349612;
+}
+
+.red-status-name {
+    color: #E04338;
+}
+
+.orange-status-name {
+    color: #F68218 !important;
+}
+
+.green {
+    background: #349612;
+}
+
+.red {
+    background: #E04338;
+}
+
+.three-users-img-container {
+    display: flex;
+    width: 32px;
+    height: 19px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 0px 0px 12px 0px;
+    background: var(--Main-Colours-Primary, #FE6700);
+}
+
+.three-users-img {
+    display: flex;
+    width: 22px;
+    height: 16px;
+    /* padding: 4px 1px; */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.camera-name {
+    color: #fff;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+.camera-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px
+}
+
+h2 {
+    color: var(--Color-Text-Color-1);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+p {
+    color: var(--Color-Text-Color-1);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.live-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+    background: var(--Color-Accent-Color, #B94B00);
+}
+
+.live-txt {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    padding: 2px 8px;
+}
+
+.hover-options {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 99%;
+    top: 10px;
+}
+
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-btn {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.grid-edit-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.gap20 {
+    display: flex;
+    gap: 20px
+}
+
+.mw-250 {
+    max-width: 250px;
+}
+
+.edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 16px;
+    background: #fff;
+    backdrop-filter: blur(6px);
+}
+
+.edit-container.expended {
+    padding: 16px;
+    animation: expandWidth 0.5s ease-in-out forwards;
+    height: fit-content;
+    max-height: 600px;
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 20%;
+    }
+}
+
+.edit-container.close {
+    animation: closeWidth 0.5s ease-in-out forwards;
+}
+
+@keyframes closeWidth {
+    from {
+        width: 20%;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+
+/* CameraInfo --------------------------------------------- */
+
+.camera-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.camera-info-title-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-list-item-title {
+    color: #FF7D66;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.info-list-item-description {
+    color: var(--Base-colours-Dark, #0F0600);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.camera-info-title {
+    color: var(--Color-Text-Color-1, );
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.camera-info-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.camera-info-detail-title {
+    color: var(--Color-Text-Color-1, );
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.camera-info-detail-text {
+    color: var(--Color-Text-Color-1, );
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* Camera Settings ---------------------------------------- */
+
+.camera-settings-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.camera-settings-title {
+    color: var(--Color-Text-Color-1, );
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.edit-camera-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch;
+}
+
+.camera-name-label {
+    display: flex;
+    font-weight: 600;
+    font-size: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+    border-bottom: 1px solid #ddd;
+}
+
+.camera-name-input {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 8px;
+    /* border: 1px solid var(--Color-Text-Color-1, ); */
+    background: #f8f2f2ea;
+}
+
+.light-gray-bg {
+    background: #f8f2f2ea !important;
+}
+
+.more-actions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.settings-sub-title {
+    color: var(--Color-Text-Color-1, #011205);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.settings-btn {
+    display: flex;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 8px;
+}
+
+.add-group {
+    background: var(--Color-Primary-Color, #FF6700);
+}
+
+.add-tag {
+    background: var(--Color-Secondary-Color, #FFAD75);
+}
+
+.share-camera-link {
+    border: 1px solid var(--Color-Secondary-Color, #FFAD75);
+    background: var(--Color-White-Color, #FFF);
+}
+
+.delete-camera {
+    border: 1px solid var(--Color-Primary-Color, #FF6700);
+    background: var(--Color-White-Color, #FFF);
+}
+
+.settings-btn-txt {
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.white {
+    color: var(--Color-White-Color, #FFF);
+}
+
+.black {
+    color: var(--Color-Primary-Color, #09002F);
+}
+
+/* Camera Chat ---------------------------------------- */
+.camera-chat-main-container {
+    display: flex;
+    /* flex: 1 1; */
+    height: 67%;
+    width: 43%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+}
+
+.camera-chat-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.camera-chat-title {
+    color: var(--Color-Text-Color-1);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.camera-chat-input-container {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 8px;
+    background:#F3F5FC
+}
+
+.camera-chat-input {
+    color: var(--Color-Text-Color-1, #BEBEBE);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    align-items: center;
+    background-color:#F3F5FC;
+    border: none;
+    width: 100%;
+}
+
+.img-send {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    /* transform: rotate(325deg); */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.small {
+    width: 15px;
+    height: 15px;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+/*CameraList---------------------------------------*/
+.list-edit-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.camera-list-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.camera-img-name-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.camera-name-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.camera-list-name {
+    color: var(--Color-Text-Color-1, );
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.camera-list-status-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.camera-list-status {
+    color: var(--Color-Text-Color-1, );
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.camera-date-added {
+    color: var(--Color-Text-Color-1, );
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.tree-item-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.height600 {
+    height: 600px !important;
+}
+
+/* Add to Group */
+.add-to-group-checkbox-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+}
+
+.group-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    color: #000;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.remove-icons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.remove-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+    padding: 4px 8px;
+    border: solid 1px #f8f2f2ea;
+}
+
+.tree-item {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.main-tree-title {
+    color: var(--Base-colours-Dark, #0F0600);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.main-tree-sec-title {
+    color: var(--Base-colours-Dark, #0F0600);
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.tree-third-title {
+    color: var(--Base-colours-Dark, #0F0600);
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
