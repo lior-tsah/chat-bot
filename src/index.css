@@ -18,4 +18,26 @@ code {
   justify-content: center;
   height: 100vh;
   width: 100%;
+  background: #f4ffff;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Background of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 12px;
+
+}
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
