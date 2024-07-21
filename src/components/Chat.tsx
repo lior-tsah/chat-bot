@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./Chat.css";
 import Send from "../assets/send.svg";
+import CircularProgress from '@mui/material/CircularProgress';
 
 interface Message {
   text: string;
@@ -10,6 +11,8 @@ interface Message {
 const Chat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [typing, setTyping] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const [inputValue, setInputValue] = useState("");
   const [currentMessage, setCurrentMessage] = useState("");
   const typingInterval = useRef<any>(null);
@@ -42,9 +45,11 @@ const Chat: React.FC = () => {
     if (messageText.length > 0) {
       setMessages([...messages, { text: messageText, sender: "user" }]);
       setInputValue("");
+      setLoading(true)
       setTimeout(() => {
         setTyping(true);
-      }, 1500);
+        setLoading(false)
+      }, 4500);
     }
   };
 
@@ -62,6 +67,9 @@ const Chat: React.FC = () => {
           <div className="message bot">{currentMessage}</div>
         )}
       </div>
+      {loading && (
+        <CircularProgress size={30} />
+      )}
       <div className="camera-chat-input-container">
         <input
           className="camera-chat-input"

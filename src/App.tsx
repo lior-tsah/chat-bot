@@ -19,9 +19,6 @@ function App() {
 
   return (
     <div className='page'>
-      {/* <Button aria-describedby={id} variant="contained" onClick={handleClick}>
-        Open Popover
-      </Button> */}
       <div className='circle-btn-container'>
         <button className='circle-btn' onClick={handleClick}>
           <img className='circle-btn' src={logo} />
