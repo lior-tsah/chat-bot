@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import "./Chat.css";
 import Send from "../assets/send.svg";
 import CircularProgress from '@mui/material/CircularProgress';
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ComputerIcon from '@mui/icons-material/Computer';
 interface Message {
   text: string;
   sender: string;
@@ -59,12 +60,24 @@ const Chat: React.FC = () => {
     <div className="chat-container">
       <div className="chat-history">
         {messages.map((message, index) => (
-          <div key={index} className={`message ${message.sender}`}>
-            {message.text}
+          <div key={index} className={`message-container ${message.sender === "bot" ? "" : "user-container"}`}>
+            {message.sender === "bot" ?
+              <ComputerIcon /> :
+              <AccountCircleIcon />
+            }
+            <div className={`message ${message.sender}`}>
+              {message.text}
+            </div>
           </div>
         ))}
         {typing && currentMessage.length > 0 && (
-          <div className="message bot">{currentMessage}</div>
+          <div className={`message-container`}>
+            <ComputerIcon />
+            <label className="message bot">
+              {currentMessage}
+            </label>
+          </div>
+
         )}
       </div>
       {loading && (

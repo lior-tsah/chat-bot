@@ -21,11 +21,22 @@
 }
 
 .message {
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: fit-content;
+    max-width: 85%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.message-container {
     margin-bottom: 10px;
     padding: 5px 10px;
     border-radius: 5px;
     width: fit-content;
-    max-width: 80%;
+    max-width: 85%;
+    display: flex;
+    gap: 6px;
 }
 
 .user {
@@ -33,6 +44,12 @@
     text-align: right;
     align-self: flex-end;
     color: #fff;
+}
+
+.user-container {
+    flex-direction: row-reverse;
+    text-align: right;
+    align-self: flex-end;
 }
 
 .bot {
