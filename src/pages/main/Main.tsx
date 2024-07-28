@@ -7,21 +7,21 @@ import { useSession } from './MainContext';
 
 interface Props {
   sessionId: string;
-  userId: string;
+  clientId: string;
   mainLogo?: string;
   seconderyLogo?: string;
   title?: string;
 }
 
-const Main: React.FC<Props> = ({ sessionId, userId, mainLogo, seconderyLogo, title }) => {
+const Main: React.FC<Props> = ({ sessionId, clientId, mainLogo, seconderyLogo, title }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const { setSessionId, setUserId } = useSession();
+  const { setSessionId, setClientId } = useSession();
 
   useEffect(() => {
     setSessionId(sessionId);
-    setUserId(userId);
-  }, [userId, sessionId]);
+    setClientId(clientId);
+  }, [clientId, sessionId]);
 
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);

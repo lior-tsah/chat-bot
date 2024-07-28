@@ -12,7 +12,7 @@ interface Message {
 }
 
 const Chat: React.FC = () => {
-  const { sessionId, userId } = useSession();
+  const { sessionId, clientId } = useSession();
   const [messages, setMessages] = useState<Message[]>([]);
   const [typing, setTyping] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ const Chat: React.FC = () => {
           wait for the API to be ready
         // Step 4: Update the URL and parameters as needed for your API
         
-        const response = await axios.get(`your-api-endpoint/chat-history?sessionId=${sessionId}&userId=${userId}`);
+        const response = await axios.get(`your-api-endpoint/chat-history?sessionId=${sessionId}&clientId=${clientId}`);
         */
         const response = {
           data: [
@@ -51,7 +51,7 @@ const Chat: React.FC = () => {
     };
 
     fetchChatHistory();
-  }, [sessionId, userId]); // Step 3: Fetch chat history when component mounts or sessionId/userId changes
+  }, [sessionId, clientId]); // Step 3: Fetch chat history when component mounts or sessionId/clientId changes
 
   useEffect(() => {
     if (typing) {

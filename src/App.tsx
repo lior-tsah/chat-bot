@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className='page'>
-      <Main sessionId={''} userId={''} />
+      <Main sessionId={''} clientId={''} />
     </div>
   );
 }
