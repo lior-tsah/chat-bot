@@ -21,7 +21,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Getting Started
 
-To use this app effectively, you need to pass specific properties (`props`) when initializing components. These props include `clientId`, `sessionId`, `title`, `mainLogo`, and `secondaryLogo`. This guide will walk you through how to set up and pass these props to the app components.
+To use this app effectively, you need to pass specific properties (`props`) when initializing components. These props include `clientId`, `title`, `mainLogo`, and `secondaryLogo`. This guide will walk you through how to set up and pass these props to the app components.
 
 ### Prerequisites
 
@@ -43,9 +43,8 @@ import ReactDOM from 'react-dom';
 import Main from './main'; // Adjust the import path according to your file structure
 
 ReactDOM.render(
-  <Main
+  <MamaramChatBot
     clientId="yourclientIdHere"
-    sessionId="yourSessionIdHere"
     title="Your App Title Here"
     mainLogo="path/to/your/mainLogo.png"
     secondaryLogo="path/to/your/secondaryLogo.png"

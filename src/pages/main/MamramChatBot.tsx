@@ -3,22 +3,26 @@ import logo from '../../assets/logo.svg';
 import '../../App.css';
 import Chatbot from '../chatbot/Chatbot';
 import { Button, Popover, Zoom } from '@mui/material';
-import { useSession } from './MainContext';
+import { SessionProvider, useSession } from './MainContext';
+import { v4 as uuidv4 } from 'uuid'; // Import v4 function from uuid
 
 interface Props {
-  sessionId: string;
   clientId: string;
   mainLogo?: string;
   seconderyLogo?: string;
   title?: string;
 }
 
-const Main: React.FC<Props> = ({ sessionId, clientId, mainLogo, seconderyLogo, title }) => {
+const MamaramChatBot: React.FC<Props> = ({ clientId, mainLogo, seconderyLogo, title }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const { setSessionId, setClientId } = useSession();
+  const sessionId = uuidv4();
+
 
   useEffect(() => {
+    console.log(sessionId);
+    console.log(clientId);
     setSessionId(sessionId);
     setClientId(clientId);
   }, [clientId, sessionId]);
@@ -75,14 +79,16 @@ const Main: React.FC<Props> = ({ sessionId, clientId, mainLogo, seconderyLogo, t
           horizontal: 'center',
         }}
       >
-        <Chatbot
-          mainLogo={mainLogo}
-          seconderyLogo={seconderyLogo}
-          title={title}
-        />
+        <SessionProvider>
+          <Chatbot
+            mainLogo={mainLogo}
+            seconderyLogo={seconderyLogo}
+            title={title}
+          />
+        </SessionProvider>
       </Popover>
     </>
   );
 }
 
-export default Main;
+export default MamaramChatBot;

@@ -1,11 +1,11 @@
 import './App.css';
-import Main from './pages/main/Main';
+import MamaramChatBot from './pages/main/MamramChatBot';
 
 function App() {
 
   return (
     <div className='page'>
-      <Main sessionId={''} clientId={''} />
+      <MamaramChatBot clientId={'client-id-example'} />
     </div>
   );
 }

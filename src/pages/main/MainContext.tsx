@@ -16,8 +16,11 @@ const SessionContext = createContext<SessionContextState>({
   setClientId: () => {},
 });
 
+interface Props {
+    children: React.ReactNode;
+}
 // Create a provider component
-export const SessionProvider: React.FC = ({ children }: any) => {
+export const SessionProvider: React.FC<Props> = ({ children }) => {
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [clientId, setClientId] = useState<string | null>(null);
 
