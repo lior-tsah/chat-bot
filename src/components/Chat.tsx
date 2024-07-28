@@ -1,15 +1,18 @@
 import { useState, useEffect, useRef } from "react";
 import "./Chat.css";
+import axios from "axios"; // Step 1: Import axios
 import Send from "../assets/send.svg";
 import CircularProgress from '@mui/material/CircularProgress';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ComputerIcon from '@mui/icons-material/Computer';
+import { useSession } from "../pages/main/MainContext";
 interface Message {
   text: string;
   sender: string;
 }
 
 const Chat: React.FC = () => {
+  const { sessionId, userId } = useSession();
   const [messages, setMessages] = useState<Message[]>([]);
   const [typing, setTyping] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -18,6 +21,37 @@ const Chat: React.FC = () => {
   const [currentMessage, setCurrentMessage] = useState("");
   const typingInterval = useRef<any>(null);
 
+
+  useEffect(() => {
+    const fetchChatHistory = async () => {
+      setLoading(true);
+      try {
+        /*
+          wait for the API to be ready
+        // Step 4: Update the URL and parameters as needed for your API
+        
+        const response = await axios.get(`your-api-endpoint/chat-history?sessionId=${sessionId}&userId=${userId}`);
+        */
+        const response = {
+          data: [
+            { text: "hi how are you?", sender: "user" },
+            { text: "Hello! How can I assist you today?", sender: "bot" },
+            { text: "hi how are you?", sender: "user" },
+            { text: "Hello! How can I assist you today?", sender: "bot" },
+            { text: "hi how are you?", sender: "user" },
+            { text: "Hello! How can I assist you today?", sender: "bot" },
+          ], // Sample response
+        }
+        setMessages(response.data); // Adjust according to your response structure
+      } catch (error) {
+        console.error("Failed to fetch chat history:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchChatHistory();
+  }, [sessionId, userId]); // Step 3: Fetch chat history when component mounts or sessionId/userId changes
 
   useEffect(() => {
     if (typing) {

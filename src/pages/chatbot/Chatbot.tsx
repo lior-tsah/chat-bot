@@ -7,8 +7,14 @@ interface Props {
   mainLogo?: string;
   seconderyLogo?: string;
   title?: string;
+
 }
-const Chatbot = ({ mainLogo = Logo, seconderyLogo = Send, title = "Generic Chat Title" }: Props) => {
+
+const Chatbot = ({
+  mainLogo = Logo,
+  seconderyLogo = Send,
+  title = "Generic Chat Title",
+}: Props) => {
 
   return (
     <div className="camera-chat-main-container">
