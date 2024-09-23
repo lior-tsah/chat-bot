@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className='page'>
-      <MamaramChatBot clientId={'client-id-example'} />
+      <MamaramChatBot />
     </div>
   );
 }

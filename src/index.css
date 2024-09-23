@@ -42,3 +42,8 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+.webchat{
+  height: 500px;
+  width: 500px;
+  padding: 20px;
+}
